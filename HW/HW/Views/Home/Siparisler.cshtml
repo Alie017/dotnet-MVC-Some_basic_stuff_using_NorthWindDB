@@ -1,0 +1,44 @@
+﻿
+<h2>Siparisler</h2>
+<hr style="border: 4px solid orange" />
+<table class="table">
+    <tr>
+        <th>
+            Siparis No:
+        </th>
+        <th>
+            Siparis Tarihi:
+        </th>
+        <th>
+            Müsteri Adı:
+        </th>
+        
+        
+       
+    </tr>
+    @foreach (Order item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.ActionLink("Ürünler", "UrunDetay", "Home", null, new { @class = "btn btn-success btn-xs" }) &nbsp;
+               
+                @item.OrderId
+            </td>
+            <td>
+                @item.OrderDate
+            </td>
+            <td>
+                @item.CustomerId
+            </td>
+            
+            <td>
+
+                
+            </td>
+           
+
+        </tr>
+
+    }
+</table>

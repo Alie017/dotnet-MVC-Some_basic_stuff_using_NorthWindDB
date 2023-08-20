@@ -1,0 +1,37 @@
+﻿
+<h2>Urun Detaylari</h2>
+<hr style="border: 4px solid red" />
+<table class="table">
+    <tr>
+        <th>
+            Urun adi:
+        </th>
+        <th>
+            Urun miktarı:
+        </th>
+        <th>
+            Müsteri Adı:
+        </th>
+
+
+
+    </tr>
+    @foreach (Product item in Model)
+    {
+        <tr>
+
+            <td>
+                @item.ProductName
+            </td>
+            <td>
+                @item.QuantityPerUnit
+            </td>
+
+            <td>
+            </td>
+
+
+        </tr>
+
+    }
+</table>
