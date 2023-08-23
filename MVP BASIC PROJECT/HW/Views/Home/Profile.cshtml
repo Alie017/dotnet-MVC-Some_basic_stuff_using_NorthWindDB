@@ -1,0 +1,42 @@
+﻿@model EmployeeDetailViewModel
+
+<h2>Profil</h2>
+<hr style="border: 4px solid green" />
+@if(Model is null)
+{
+    <p>@ViewBag.Message</p>
+}
+else
+{
+@:Name: @Model.Name
+<br />
+@:Last Name: @Model.Surname
+<br />
+@:Title: @Model.Title
+<br />
+@:Birth Date: @Model.BirthDate
+
+<form asp-action ="Update" asp-route-id="@Model.EmployeeId" method="post">
+      Phone: <input asp-for="Phone" style="border-style:solid; font-size:15px;" class="form-control-lg" />
+      City: <input asp-for="City" style="border-style:solid; font-size:15px;" class="form-control-lg" />
+      Country: <input asp-for="Country" style="border-style:solid; font-size:15px;" class="form-control-lg" />
+      <input asp-for="EmployeeId" type="hidden">
+      <button class="btn btn-success" style="align-content:center; height:43px;" onclick="myFunction()" id="myButton" value="Update">Update</button>
+</form>    
+}
+<script>
+    function myFunction() {
+
+        var btn = document.getElementById("myButton");
+
+        if (btn.value == "Update") {
+            btn.value = "Successfull";
+            btn.innerHTML = "Successfull";
+        }
+        else {
+            btn.value = "Update";
+            btn.innerHTML = "Update";
+        }
+
+    }
+</script>

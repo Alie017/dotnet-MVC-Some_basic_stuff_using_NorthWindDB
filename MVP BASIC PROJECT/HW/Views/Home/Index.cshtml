@@ -1,0 +1,36 @@
+﻿
+<h2>Calisanlar</h2>
+<hr style="border: 4px solid blue" />
+<table class="table" >
+    <tr>
+        <th>
+           Name:
+        </th>
+        <th>
+            Surname:
+        </th>
+        <th>
+            Title:
+        </th>  
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+           
+            <td>
+                <a class="btn btn-danger" asp-action="Orders" asp-route-id="@item.EmployeeId">Orders</a>
+                <a class="btn btn-primary" asp-action="Profile" asp-route-id="@item.EmployeeId">Profile</a> 
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.Title
+            </td>
+        </tr>
+        
+    }
+</table>

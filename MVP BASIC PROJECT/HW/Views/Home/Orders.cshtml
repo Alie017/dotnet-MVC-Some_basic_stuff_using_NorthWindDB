@@ -1,0 +1,44 @@
+﻿
+<h2>Orders</h2>
+<hr style="border: 4px solid orange" />
+<table class="table">
+    <tr>
+        <th>
+            Order no:
+        </th>
+        <th>
+            Order Date:
+        </th>
+        <th>
+            Customer Name:
+        </th>
+        
+        
+       
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                <a class="btn btn-success" asp-action="ProductDetail" asp-route-id="@item.OrderId">ProductDetail</a>
+               
+                @item.OrderId
+            </td>
+            <td>
+                @item.OrderDate
+            </td>
+            <td>
+                @item.Customer.CompanyName
+            </td>
+            
+            <td>
+
+                
+            </td>
+           
+
+        </tr>
+
+    }
+</table>
